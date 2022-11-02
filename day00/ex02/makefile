@@ -1,16 +1,16 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
+#    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: waelhamd <waelhamd@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/10/09 12:27:41 by waelhamd          #+#    #+#              #
-#    Updated: 2022/10/28 02:00:40 by waelhamd         ###   ########.fr        #
+#    Created: 2022/10/27 00:35:04 by waelhamd          #+#    #+#              #
+#    Updated: 2022/10/28 02:08:20 by waelhamd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = megaphone.cpp
+SRC = Account.cpp tests.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -18,7 +18,7 @@ CXX = c++ -std=c++98
 
 CXXFLAGS = -Wall -Wextra -Werror
 
-NAME = megaphone
+NAME = account
 
 all : $(NAME)
 
@@ -28,7 +28,7 @@ $(NAME) : $(OBJ)
 clean :
 	rm -rf $(OBJ)
 
-fclean :  clean
+fclean : clean
 	rm -rf $(NAME)
 
 re : clean fclean all

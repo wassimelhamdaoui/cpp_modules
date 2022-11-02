@@ -1,30 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: waelhamd <waelhamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/23 19:24:11 by waelhamd          #+#    #+#             */
-/*   Updated: 2022/10/28 01:51:50 by waelhamd         ###   ########.fr       */
+/*   Created: 2022/10/18 12:02:08 by waelhamd          #+#    #+#             */
+/*   Updated: 2022/10/25 01:29:14 by waelhamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include"Fixed.hpp"
 
-#include <iostream>
-
-int main(int ac, char **av)
+int main( void ) 
 {
-	if(ac < 2)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-	for(int i = 1; i < ac; i++)
-	{
-		std::string tab = av[i];
-		for(int j=0; j < (int)tab.length(); j++)
-			if(islower(tab[j]))
-				tab[j] = (char)toupper(tab[j]);
-		std::cout << tab + " ";
-	}
-	std::cout << std::endl;
+	Fixed a;
+	Fixed b( a );
+	Fixed c;
+	c = b;
+	std::cout << a.getRawBits() << std::endl;
+	std::cout << b.getRawBits() << std::endl;
+	std::cout << c.getRawBits() << std::endl;
 	return 0;
 }
+
+
+
+
+
+
+
+/*
+1+1 un operation arithmique
+
+notatin prefix et notation postfix
+*/
+

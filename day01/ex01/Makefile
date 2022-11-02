@@ -5,30 +5,29 @@
 #                                                     +:+ +:+         +:+      #
 #    By: waelhamd <waelhamd@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/10/09 12:27:41 by waelhamd          #+#    #+#              #
-#    Updated: 2022/10/28 02:00:40 by waelhamd         ###   ########.fr        #
+#    Created: 2022/10/16 12:40:51 by waelhamd          #+#    #+#              #
+#    Updated: 2022/10/27 22:30:00 by waelhamd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = megaphone.cpp
-
+SRC = Zombie.cpp zombieHorde.cpp main.cpp
 OBJ = $(SRC:.cpp=.o)
 
-CXX = c++ -std=c++98
+CXX = c++ 
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-CXXFLAGS = -Wall -Wextra -Werror
-
-NAME = megaphone
+NAME = Zombie
 
 all : $(NAME)
 
-$(NAME) : $(OBJ)
-	$(CXX) $(CXXFLAGS) $(SRC) -o $(NAME)
+$(NAME) : $(OBJ) Zombie.hpp
+	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
 clean :
 	rm -rf $(OBJ)
 
-fclean :  clean
+fclean : clean
 	rm -rf $(NAME)
 
-re : clean fclean all
+re : clean fclean
+	

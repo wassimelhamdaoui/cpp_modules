@@ -6,7 +6,7 @@
 /*   By: waelhamd <waelhamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 03:44:50 by waelhamd          #+#    #+#             */
-/*   Updated: 2022/09/29 04:03:49 by waelhamd         ###   ########.fr       */
+/*   Updated: 2022/10/28 02:33:00 by waelhamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 class PhoneBook{
 	private:
-		static int count;
+		int count;
 		Contact contacts[8];
 		int index;
 	public:

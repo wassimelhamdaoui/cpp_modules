@@ -5,30 +5,31 @@
 #                                                     +:+ +:+         +:+      #
 #    By: waelhamd <waelhamd@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/10/09 12:27:41 by waelhamd          #+#    #+#              #
-#    Updated: 2022/10/28 02:00:40 by waelhamd         ###   ########.fr        #
+#    Created: 2022/10/20 00:43:03 by waelhamd          #+#    #+#              #
+#    Updated: 2022/10/27 22:46:51 by waelhamd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = megaphone.cpp
+src = main.cpp
 
-OBJ = $(SRC:.cpp=.o)
+obj = $(src:.cpp=.o)
 
-CXX = c++ -std=c++98
+name = replace
 
-CXXFLAGS = -Wall -Wextra -Werror
+CXX = c++
 
-NAME = megaphone
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-all : $(NAME)
+all : $(name)
 
-$(NAME) : $(OBJ)
-	$(CXX) $(CXXFLAGS) $(SRC) -o $(NAME)
+$(name) : $(obj)
+	$(CXX) $(CXXFLAGS) $(obj) -o $(name)
 
-clean :
-	rm -rf $(OBJ)
-
-fclean :  clean
-	rm -rf $(NAME)
-
-re : clean fclean all
+clean : $(obj)
+	rm -rf $(obj)
+fclean : clean
+	rm -rf $(name)
+re : all clean fclean
+	
+		
+	

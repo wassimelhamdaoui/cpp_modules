@@ -6,7 +6,7 @@
 /*   By: waelhamd <waelhamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 03:47:56 by waelhamd          #+#    #+#             */
-/*   Updated: 2022/09/30 10:00:41 by waelhamd         ###   ########.fr       */
+/*   Updated: 2022/10/28 02:34:49 by waelhamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ int main()
 				int index;
 				count = phonebook.getcount();
 				display_header();
-				for(int i = 0; i < phonebook.getcount(); i++){
+				for(int i = 0; i < count;i++){
 					Contact contact;
 					contact = phonebook.getcontact(i);
 					cout << "|" << setw(10)<<i+1;
@@ -91,6 +91,7 @@ int main()
 				{
 					cout << "enter an index to show information :";
 					cin >> index;
+					cin.ignore();
 					while (index < 1 || index > count){
 						cout << "index must be ( 1 <= index >="<< count << " ) : ";
 						cin >> index;

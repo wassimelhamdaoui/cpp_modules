@@ -6,20 +6,14 @@
 /*   By: waelhamd <waelhamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 23:40:53 by waelhamd          #+#    #+#             */
-/*   Updated: 2022/09/29 04:03:57 by waelhamd         ###   ########.fr       */
+/*   Updated: 2022/10/28 02:34:32 by waelhamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"phonebook.hpp"
 
-// PhoneBook::dispaly_contact(){
-// 	for(int i=0; i < this->index, i++)
-// 	{
-// 		cout << Contact::get_first_name <<
-// 	}
-// }
 
-PhoneBook::PhoneBook(): index(0){
+PhoneBook::PhoneBook(): count(0), index(0){
 	return;
 }
 
@@ -42,4 +36,3 @@ int	PhoneBook::getcount(){
 	return this->count;
 }
 
-int PhoneBook::count= 0;
