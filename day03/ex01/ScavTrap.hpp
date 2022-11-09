@@ -1,22 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: waelhamd <waelhamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/01 19:55:01 by waelhamd          #+#    #+#             */
-/*   Updated: 2022/11/07 01:11:32 by waelhamd         ###   ########.fr       */
+/*   Created: 2022/11/07 01:16:41 by waelhamd          #+#    #+#             */
+/*   Updated: 2022/11/08 22:41:17 by waelhamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"ClapTrap.hpp"
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
-int main()
+#include"ClapTrap.hpp"
+# include <iostream>
+
+class ScavTrap : public ClapTrap
 {
-	ClapTrap claper("wassim");
-	claper.attack("elhamdaoui");
-	claper.takeDamage(1);
-	claper.beRepaired(2);
-	return 0;
-}
+
+	public:
+
+		ScavTrap();
+		ScavTrap(std::string name);
+		ScavTrap( ScavTrap const &object);
+		~ScavTrap();
+
+		ScavTrap &		operator=( ScavTrap const & rhs );
+
+		void guardGate();
+		void attack(const std::string& target);
+
+};
+
+
+#endif
