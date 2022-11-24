@@ -6,12 +6,11 @@
 /*   By: waelhamd <waelhamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 01:27:10 by waelhamd          #+#    #+#             */
-/*   Updated: 2022/10/31 17:58:46 by waelhamd         ###   ########.fr       */
+/*   Updated: 2022/11/15 12:20:11 by waelhamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"Fixed.hpp"
-
 
 
 Fixed::Fixed()
@@ -28,7 +27,6 @@ Fixed::~Fixed()
 Fixed::Fixed(Fixed const &nb)
 {
 	this->fixe = nb.getRawBits();
-	return ;
 }
 
 Fixed::Fixed(int const nb)
@@ -38,12 +36,12 @@ Fixed::Fixed(int const nb)
 
 Fixed::Fixed(float const nb)
 {
-	this->fixe = (int)roundf(nb * (float)(1 << this->fraction));
+	this->fixe = (int)round(nb * (float)(1 << this->fraction));
 }
 
 float Fixed::toFloat( void ) const
 {
-	return((float)(this->fixe / (float)(1 << 8)));
+	return((float)(this->fixe / (float)(1 << this->fraction)));
 }
 
 int Fixed::toInt( void ) const
@@ -119,32 +117,29 @@ bool Fixed::operator !=(Fixed const &compar) const
 
 Fixed  Fixed::operator +(Fixed const &op) const
 {
-	Fixed tmp;
+	Fixed tmp(this->toFloat() + op.toFloat());
 	
-	tmp.fixe = this->toFloat() + op.toFloat();
 	return(tmp);
 }
 
 Fixed  Fixed::operator -(Fixed const &op) const
 {
-	Fixed tmp;
+	Fixed tmp(this->toFloat() - op.toFloat());
 	
-	tmp.fixe = this->toFloat() - op.toFloat();
 	return(tmp);
 }
 
 Fixed  Fixed::operator *(Fixed const &op) const
 {
-	Fixed tmp;
+	Fixed tmp(this->toFloat() * op.toFloat());
 	
-	tmp.fixe = this->toFloat() * op.toFloat();
 	return(tmp);
 }
+
 Fixed  Fixed::operator /(Fixed const &op) const
 {
-	Fixed tmp;
+	Fixed tmp(this->toFloat() / op.toFloat());
 	
-	tmp.fixe = this->toFloat() / op.toFloat();
 	return(tmp);
 }
 
@@ -172,4 +167,33 @@ Fixed	Fixed::operator --(int)
 	Fixed tmp(*this);
 	this->fixe -= 1;
 	return tmp;
+}
+
+
+Fixed &Fixed::max(Fixed &a, Fixed &b)
+{
+	if(a > b)
+		return a;
+	return b;
+}
+
+Fixed &Fixed::min(Fixed &a, Fixed &b)
+{
+	if(a > b)
+		return b;
+	return a;
+}
+
+const Fixed &Fixed::max(Fixed const &a, Fixed const &b)
+{
+	if(a > b)
+		return a;
+	return b;
+}
+
+const Fixed &Fixed::min(Fixed const &a, Fixed const &b)
+{
+	if(a > b)
+		return b;
+	return a;
 }

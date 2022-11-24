@@ -6,13 +6,13 @@
 /*   By: waelhamd <waelhamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 01:08:13 by waelhamd          #+#    #+#             */
-/*   Updated: 2022/11/07 01:16:36 by waelhamd         ###   ########.fr       */
+/*   Updated: 2022/11/16 17:09:59 by waelhamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"ClapTrap.hpp"
 
-ClapTrap::ClapTrap() : Hitpoints(10), Energypoints(10), Attackdamage(0), name("")
+ClapTrap::ClapTrap() :  name(""), Hitpoints(10), Energypoints(10), Attackdamage(0)
 {
 	std::cout << "Defualt constractor called" <<std::endl;
 }
@@ -29,16 +29,16 @@ ClapTrap::~ClapTrap()
 ClapTrap::ClapTrap(ClapTrap const &object)
 {
 	std::cout << "copy constractor called" <<std::endl;
-	this->name = object.name;
-	this->Hitpoints = object.Hitpoints;
-	this->Energypoints = object.Energypoints;
-	this->Attackdamage = object.Attackdamage;
+	*this = object;
 }
 
 ClapTrap & ClapTrap::operator =(ClapTrap const &object)
 {
 	std::cout << "assingnement operator called" << std::endl;
-	*this = object;
+	this->name = object.name;
+	this->Hitpoints = object.Hitpoints;
+	this->Energypoints = object.Energypoints;
+	this->Attackdamage = object.Attackdamage;
 	return *this;
 }
 //clap attack the target the target lose hitpoint and the clap lose one energypoint

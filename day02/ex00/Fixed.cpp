@@ -6,7 +6,7 @@
 /*   By: waelhamd <waelhamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 01:27:10 by waelhamd          #+#    #+#             */
-/*   Updated: 2022/11/01 20:42:56 by waelhamd         ###   ########.fr       */
+/*   Updated: 2022/11/15 13:12:37 by waelhamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,12 @@ Fixed::~Fixed()
 {
 	std::cout << "destracteur is called" << std::endl;
 	return ;
+}
+
+Fixed::Fixed(int const nb)
+{
+	std::cout << "parametre constructor called" << std::endl;
+	this->fixe = nb;
 }
 
 Fixed::Fixed(Fixed const &nb)

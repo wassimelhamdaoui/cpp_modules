@@ -6,7 +6,7 @@
 /*   By: waelhamd <waelhamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 01:27:10 by waelhamd          #+#    #+#             */
-/*   Updated: 2022/10/30 14:46:02 by waelhamd         ###   ########.fr       */
+/*   Updated: 2022/11/15 12:11:37 by waelhamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ Fixed::~Fixed()
 Fixed::Fixed(Fixed const &nb)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	this->fixe = nb.getRawBits();
+	if(this != &nb)
+		this->fixe = nb.fixe;
 	return ;
 }
 

@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: waelhamd <waelhamd@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/27 03:25:32 by waelhamd          #+#    #+#              #
-#    Updated: 2022/10/27 22:29:12 by waelhamd         ###   ########.fr        #
+#    Updated: 2022/11/10 00:34:26 by waelhamd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,9 @@ CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 NAME = Zombie
+
+%.o : %.cpp
+	$(CXX) $(CXXFLAGS) -c $<
 
 all : $(NAME)
 
@@ -29,4 +32,4 @@ clean :
 fclean : clean
 	rm -rf $(NAME)
 
-re : clean fclean
+re : fclean all

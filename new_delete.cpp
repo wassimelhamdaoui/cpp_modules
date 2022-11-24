@@ -6,62 +6,13 @@
 /*   By: waelhamd <waelhamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 00:39:10 by waelhamd          #+#    #+#             */
-/*   Updated: 2022/10/26 23:01:50 by waelhamd         ###   ########.fr       */
+/*   Updated: 2022/11/18 13:49:32 by waelhamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<string.h>
 #include<iostream>
 using namespace std;
-// class Student
-// {
-// 	private:
-// 			string login;
-// 	public:
-// 			Student(string const &log): login(log){
-// 			}
-// 			~Student(){
-// 			}
-// 			string&	getlogref(){
-// 				return login;
-// 			}
-// 			string const &getlogrefconst()const{
-// 				return login;
-// 			}
-// 			string *getlogptr(){
-// 				return &(login);
-// 			}
-// 			string const *getlogptrconst()const{
-// 				return &(login);
-// 			}
-			
-// };
-
-
-// // int main(){
-// // 	int nbball = 42;
-
-// // 	int	*ballptr;
-// // 	int &ballref = nbball;
-
-// // 	ballptr = &nbball;
-
-// // 	cout << &nbball << " " << &ballptr << " " << &ballref << endl;
-// // 	*ballptr = 21;
-// // 	cout << nbball << endl;
-// // 	ballref = 84;
-// // 	cout << nbball << endl;
-// // 	return 0;
-// // }
-
-// int main(){
-// 	Student bob = Student("bob");
-// 	Student const jim = Student("jim");
-
-// 	cout << bob.getlogrefconst() << " " << jim.getlogrefconst() << endl;
-// 	cout << *(bob.getlogptrconst()) << " " << *(jim.getlogptrconst()) << endl;
-// }
-
 
 /*
 flexibility in precision in range in sata size its easier to cast integers to fixed point
@@ -90,4 +41,31 @@ a standard class should look like the folowing code::
 	};
 
 */
+class a
+{
+	public :
+		virtual void foo()
+		{
+			std::cout <<"foo : class a\n";
+		}
+};
 
+class b : public a
+{
+	public :
+		void boo()
+		{
+			std::cout << "foo : class b\n";
+		}
+};
+
+void print (a & obj){
+	obj.foo();
+}
+int main()
+{
+	// a ob1;
+	b ob2;
+	// print(ob1);
+	print(ob2);
+}

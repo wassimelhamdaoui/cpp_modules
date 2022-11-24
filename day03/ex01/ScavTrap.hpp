@@ -6,7 +6,7 @@
 /*   By: waelhamd <waelhamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 01:16:41 by waelhamd          #+#    #+#             */
-/*   Updated: 2022/11/08 22:41:17 by waelhamd         ###   ########.fr       */
+/*   Updated: 2022/11/16 16:22:04 by waelhamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ class ScavTrap : public ClapTrap
 {
 
 	public:
-
 		ScavTrap();
 		ScavTrap(std::string name);
 		ScavTrap( ScavTrap const &object);

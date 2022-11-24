@@ -6,7 +6,7 @@
 /*   By: waelhamd <waelhamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 01:27:07 by waelhamd          #+#    #+#             */
-/*   Updated: 2022/10/30 07:08:47 by waelhamd         ###   ########.fr       */
+/*   Updated: 2022/11/22 18:38:37 by waelhamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,18 @@
 class Fixed
 {
 private:
-	int fixe; // value
-	static const int fraction = 8; // fractional bit
+	
+	static const int fraction = 8;
+	int fixe; // value; // fractional bit
 public:
     /*constractuer*/
 	Fixed();
-	// Fixed(int const nb);
-	// Fixed(double const nb);
+	Fixed(int const nb);
+	Fixed(float nb)
+	{
+		std::cout << "flote constractor"<<std::endl;
+		this->fixe = (int)nb;
+	}
 	Fixed(Fixed const &fixe);
 	/* destracteur*/
 	~Fixed();

@@ -6,7 +6,7 @@
 /*   By: waelhamd <waelhamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 01:27:07 by waelhamd          #+#    #+#             */
-/*   Updated: 2022/10/31 12:17:40 by waelhamd         ###   ########.fr       */
+/*   Updated: 2022/11/15 18:33:16 by waelhamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ class Fixed
 {
 private:
 	static const int fraction = 8; // fractional bit
-public:
 	int fixe; // value
+public:
 		Fixed();
 		~Fixed();
 		Fixed(int const nb);// convert to fixed point ***********
@@ -33,7 +33,6 @@ public:
 	/*operateur overload*/
 	Fixed & operator = (Fixed const &addition);
 	
-	/*member fonction int->float and float->int*/
 	 float	toFloat( void ) const;// convertit la valeur en virgule fixe en nombre à virgule flottante.
 	 int		toInt( void ) const;// convertit la valeur en virgule fixe en nombre entier.
 	

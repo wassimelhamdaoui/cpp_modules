@@ -6,7 +6,7 @@
 /*   By: waelhamd <waelhamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 02:46:23 by waelhamd          #+#    #+#             */
-/*   Updated: 2022/10/29 09:38:36 by waelhamd         ###   ########.fr       */
+/*   Updated: 2022/11/10 04:22:34 by waelhamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,11 +55,14 @@ int main(int ac, char **av)
 	std::string file = av[1];
 	std::string s1 = av[2];
 	std::string s2 = av[3];
+	if(s1.empty()){
+		std::cout << "string 1: is empty" << std::endl;
+		return 1;
+	}
 	std::ifstream filename(file);
-
 	if(!filename.is_open())
 	{
-		std::cerr << "failed to open :" << file << std::endl;
+		std::cout << "failed to open :" << file << std::endl;
 		 return 1;
 	}
 // read from filename to buffer
@@ -68,17 +71,23 @@ int main(int ac, char **av)
 		std::getline(filename, buffer, '\0');
 	}
 	size_t pos;
+	std::string save;
 	while((pos = buffer.find(s1))!= std::string::npos && s1 != s2)
 	{
-		buffer = buffer.substr(0, pos) + s2 + buffer.substr(pos+s2.length(), buffer.length());
+		buffer = buffer.substr(0, pos) + s2 + buffer.substr(pos+s1.length(), buffer.length());
+		save += buffer.substr(0, pos) + s2;
+		buffer = buffer.substr(pos + s2.length(), buffer.length());
 	}
+	save +=buffer;
 	
 	//write buffer to file .replace
 	std::ofstream _outfile(file + ".replace");
-	if(!_outfile.is_open()){
-		std::cerr << "can't open or create "<< file <<std::endl;
-		 return 1;}
-	_outfile << buffer;
+	// if(!_outfile.is_open())
+	// {
+	// 	std::cout << "can't open or create "<< file <<std::endl;
+	// 	 return 1;
+	// }
+	_outfile << save;
 	_outfile.close();
 	filename.close();
 	return 0;

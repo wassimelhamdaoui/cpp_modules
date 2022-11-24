@@ -6,7 +6,7 @@
 /*   By: waelhamd <waelhamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 09:40:42 by waelhamd          #+#    #+#             */
-/*   Updated: 2022/10/31 17:59:06 by waelhamd         ###   ########.fr       */
+/*   Updated: 2022/11/15 12:19:32 by waelhamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,16 @@ so that we van concatenate two strings
 
 
 */
-int main( void )
-{
+int main( void ) {
 	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ));
+	
 	std::cout << a << std::endl;
-	 std::cout << ++a << std::endl;
+	std::cout << ++a << std::endl;
 	std::cout << a << std::endl;
-	 std::cout << a++ << std::endl;
+	std::cout << a++ << std::endl;
 	std::cout << a << std::endl;
 	std::cout << b << std::endl;
+	std::cout << Fixed::max( a, b ) << std::endl;
+	return 0;
 }

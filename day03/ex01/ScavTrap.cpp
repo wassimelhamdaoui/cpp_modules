@@ -6,7 +6,7 @@
 /*   By: waelhamd <waelhamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 01:16:18 by waelhamd          #+#    #+#             */
-/*   Updated: 2022/11/08 22:40:39 by waelhamd         ###   ########.fr       */
+/*   Updated: 2022/11/16 16:50:26 by waelhamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,7 @@ ScavTrap::ScavTrap(std::string name)
 ScavTrap::ScavTrap( const ScavTrap & object )
 {
 	std::cout << "ScavTrap copy constractor called" <<std::endl;
-	this->name = object.name;
-	this->Hitpoints = object.Hitpoints;
-	this->Energypoints = object.Energypoints;
-	this->Attackdamage = object.Attackdamage;
+	*this = object;
 }
 
 
@@ -54,8 +51,10 @@ ScavTrap &	ScavTrap::operator=( ScavTrap const & obj )
 	if ( this != &obj )
 	{
 		std::cout << "ScavTrap assingnement operator called" << std::endl;
-		*this = obj;
-		return *this;
+		this->name = obj.name;
+		this->Hitpoints = obj.Hitpoints;
+		this->Energypoints = obj.Energypoints;
+		this->Attackdamage = obj.Attackdamage;
 	}
 	return *this;
 }

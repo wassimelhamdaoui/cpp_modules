@@ -6,7 +6,7 @@
 /*   By: waelhamd <waelhamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 12:21:34 by waelhamd          #+#    #+#             */
-/*   Updated: 2022/10/31 17:36:46 by waelhamd         ###   ########.fr       */
+/*   Updated: 2022/11/22 18:54:15 by waelhamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,11 @@ public:
 	Fixed	operator ++(int);
 	Fixed	operator --(void);
 	Fixed	operator --(int);
-	
+
+	static Fixed &max(Fixed &a, Fixed &b);
+	static Fixed &min(Fixed &a, Fixed &b);
+	static const Fixed &max(Fixed const &a, Fixed const &b);
+	static const Fixed &min(Fixed const &a, Fixed const &b);
 	
 	 float	toFloat( void ) const;// convertit la valeur en virgule fixe en nombre à virgule flottante.
 	 int		toInt( void ) const;// convertit la valeur en virgule fixe en nombre entier.

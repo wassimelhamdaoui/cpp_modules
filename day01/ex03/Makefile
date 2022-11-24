@@ -6,7 +6,7 @@
 #    By: waelhamd <waelhamd@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/16 13:31:51 by waelhamd          #+#    #+#              #
-#    Updated: 2022/10/27 22:29:32 by waelhamd         ###   ########.fr        #
+#    Updated: 2022/11/10 00:34:35 by waelhamd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,9 +18,13 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 NAME = violence
 
+
+%.o : %.cpp Weapon.hpp HumanA.hpp HumanB.hpp
+	$(CXX) $(CXXFLAGS) -c $<
+
 all : $(NAME)
 
-$(NAME) : $(OBJ) Weapon.hpp HumanA.hpp HumanB.hpp
+$(NAME) : $(OBJ)
 	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
 clean :
@@ -29,4 +33,4 @@ clean :
 fclean : clean
 	rm -rf $(NAME)
 
-re : clean fclean
+re :fclean all

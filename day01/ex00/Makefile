@@ -6,7 +6,7 @@
 #    By: waelhamd <waelhamd@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/11 04:10:51 by waelhamd          #+#    #+#              #
-#    Updated: 2022/10/11 04:40:53 by waelhamd         ###   ########.fr        #
+#    Updated: 2022/11/10 00:33:45 by waelhamd         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,11 +18,14 @@ NAME = zombie
 
 CXX = c++
 
-CXXFLAGS = -Wall -Wextra -Werror
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+
+%.o : %.cpp Zombie.hpp
+	$(CXX) $(CXXFLAGS) -c $<
 
 all : $(NAME)
 	
-$(NAME) : $(OBJ) $(Zombie.hpp)
+$(NAME) : $(OBJ)
 	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
 clean :
@@ -31,5 +34,5 @@ clean :
 fclean : clean
 	$(RM) $(NAME)
 
-re : clean fclean all
+re :fclean all
 		
