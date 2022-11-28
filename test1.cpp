@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.cpp                                           :+:      :+:    :+:   */
+/*   test1.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: waelhamd <waelhamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 17:50:30 by waelhamd          #+#    #+#             */
-/*   Updated: 2022/11/24 04:52:41 by waelhamd         ###   ########.fr       */
+/*   Updated: 2022/11/26 05:21:26 by waelhamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,22 +30,22 @@ on a 5 action de cast possible :
 					
 */
 
-class parant {};
-class child1 : public parant {};
-class child2 : public parant {};
-class unrelated {};
+// class parant {};
+// class child1 : public parant {};
+// class child2 : public parant {};
+// class unrelated {};
 
-int main()
-{
-	child1 child11111;
+// int main()
+// {
+// 	child1 child11111;
 	
-	parant *parant1 = &child11111;
-	child2 *child2222 = static_cast<child2 *>(parant1);
+// 	parant *parant1 = &child11111;
+// 	child2 *child2222 = static_cast<child2 *>(parant1);
 	
-	// // parant *a3 = &b;
+// 	// // parant *a3 = &b;
 	
-	// // child1 *b1 = a1;
-	// child2 *c1 = static_cast<child2 *>(a1);
-	// child2 *c1 = (child2 *)a3;
+// 	// // child1 *b1 = a1;
+// 	// child2 *c1 = static_cast<child2 *>(a1);
+// 	// child2 *c1 = (child2 *)a3;
 
-};
+// };
