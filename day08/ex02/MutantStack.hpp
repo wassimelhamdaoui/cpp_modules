@@ -1,30 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   MutantStack.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: waelhamd <waelhamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/27 11:41:20 by waelhamd          #+#    #+#             */
-/*   Updated: 2022/11/29 02:14:40 by waelhamd         ###   ########.fr       */
+/*   Created: 2022/11/29 06:34:12 by waelhamd          #+#    #+#             */
+/*   Updated: 2022/11/30 02:28:16 by waelhamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EASYFIND_HPP
-#define EASYFIND_HPP
+#ifndef MUTANTSTACK_HPP
+#define MUTANTSTACK_HPP
 
 #include<iostream>
+#include<stack>
+#include<deque>
 #include<algorithm>
 
-template <typename T>
-int easyfind(T &container, int i)
-{
-	typename T::iterator it;
 
-	it = std::find(container.begin(), container.end(), i);
-	if(it == container.end())
-		throw std::exception();
-	return *it;
-}
+template <typename T>
+class MutantStack : public std::stack<T>
+{
+	public :
+		typedef typename std::stack<T>::container_type::iterator iterator;
+		
+	iterator begin(){
+		return (this->c.begin());
+	}
+	iterator end(){
+		return(this->c.end());
+	}
+};
 
 #endif

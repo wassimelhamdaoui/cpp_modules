@@ -5,40 +5,38 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: waelhamd <waelhamd@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/27 11:40:52 by waelhamd          #+#    #+#             */
-/*   Updated: 2022/11/29 13:30:10 by waelhamd         ###   ########.fr       */
+/*   Created: 2022/11/29 06:34:21 by waelhamd          #+#    #+#             */
+/*   Updated: 2022/11/29 13:18:19 by waelhamd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"easyfind.hpp"
-#include<vector>
-#include<list>
+#include"MutantStack.hpp"
 
 
 int main()
 {
-	std::vector<int> vect;
-	vect.push_back(10);
-	vect.push_back(20);
-	try
+	MutantStack<int> mstack;
+	MutantStack<int> mstack2;
+	mstack2 = mstack;
+	mstack.push(5);
+	mstack.push(17);
+	std::cout << mstack.top() << std::endl;
+	mstack.pop();
+	std::cout << mstack.size() << std::endl;
+	mstack.push(3);
+	mstack.push(5);
+	mstack.push(737);
+	//[...]
+	mstack.push(0);
+	MutantStack<int>::iterator it = mstack.begin();
+	MutantStack<int>::iterator ite = mstack.end();
+	++it;
+	--it;
+	while (it != ite)
 	{
-		std::cout<<easyfind(vect, 10)<<'\n';
-		std::cout<<easyfind(vect, 30)<<'\n';
+	std::cout << *it << std::endl;
+	++it;
 	}
-	catch(const std::exception& e)
-	{
-		std::cout << e.what() << '\n';
-	}
-	std::list<int> t_list;
-	t_list.push_back(22);
-	t_list.push_back(11);
-	try
-	{
-		std::cout<<easyfind(t_list, 22)<<'\n';
-		std::cout<<easyfind(t_list, 33)<<'\n';
-	}
-	catch(const std::exception& e)
-	{
-		std::cout << e.what() << '\n';
-	}
+	std::stack<int> s(mstack);
+	return 0;
 }
